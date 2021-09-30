@@ -1,5 +1,8 @@
 # Cara Install Git di Local
 
+[ [Kembali](README.md) ] <br/>
+Berikut di bawah adalah bagaimana cara install **Git** pada komputer Local.
+
 Pertama yang harus dilakukan terlebih dahulu adalah dengan mengunjungi situs resmi dari git tersebut.<br/>
 https://git-scm.com/ .<br />
 ![Git](https://user-images.githubusercontent.com/75562356/135226513-91113525-b3ce-48fe-ad50-2b632182f78d.png)
