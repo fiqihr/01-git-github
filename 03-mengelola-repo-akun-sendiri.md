@@ -448,8 +448,9 @@ Untuk kembali ke pada saat perubahan yang sudah lama, yang perlu dilakukan adala
 ```bash
 Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
 $ cat README.md
-ini isi proyek yang diubah
 #repository-percobaan
+
+ini isi proyek yang diubah
 
 Perubahan 1
 Perubahan 2
@@ -477,9 +478,9 @@ $ cat README.md
 ini isi proyek yang diubah
 
 Perubahan 1
-<<<<<<< HEAD
 Perubahan 2
-
+<<<<<<< HEAD
+ini isi proyek yang diubah
 =======
 >>>>>>> parent of 77058d2... Add: contents - 2
 ```
@@ -487,7 +488,6 @@ Kemudian file tersebut diedit lalu disimpan.
 ```bash
 Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main|REVERTING)
 $ cat README.md
-ini isi proyek yang diubah
 
 Perubahan 1
 Perubahan 2 setelah revert
