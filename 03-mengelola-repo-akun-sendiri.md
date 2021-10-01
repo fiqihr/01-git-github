@@ -145,6 +145,7 @@ $ git commit -m "Add: mengisi README.md"
  1 file changed, 1 insertion(+)
  ```
 Informasi diatas menjelaskan bahwa kita telah memodifikasi file `README.md` di dalam branch baru yang bernama `edit-readme-1` dan telah melakukan commit.
+```bash
 Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
 $ git checkout main
 Switched to branch 'main'
@@ -152,7 +153,6 @@ Your branch is based on 'origin/master', but the upstream is gone.
   (use "git branch --unset-upstream" to fixup)
 
 Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
-```bash
 $ git status
 On branch main
 Your branch is based on 'origin/master', but the upstream is gone.
