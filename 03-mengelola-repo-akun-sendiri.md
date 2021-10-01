@@ -94,5 +94,92 @@ Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/fiqihr/repository-percobaan.git
  * [new branch]      main -> main
 ```
-perintah `$ git commit` artinya kita telah melakukan perubahan yang kemudian akan direkam untuk repo kita . `-m "<commit message>` digunakan untuk memberikan pesan dari commit yang sudah kita lakukan. pesan diatas yaitu `"Add: README.md"`.
+perintah `$ git commit` artinya kita telah melakukan perubahan yang kemudian akan direkam untuk repo kita. `-m "<commit message>` digunakan untuk memberikan pesan dari commit yang sudah kita lakukan. pesan diatas yaitu `"Add: README.md"`.<br/>
 `$ git push origin main` adalah perintah yang mengatakan "tekan komit di cabang lokal bernama main ke remote bernama origin". Setelah ini dijalankan, semua hal yang terakhir di sinkronkan dengan asal akan dikirim ke repositori jarak jauh.
+
+### Mengubah Isi Dengan Branching dan Merging ###
+
+Dengan menggunakan cara ini, setiap kali akan melakukan perubahan, perubahan itu dilakukan di komputer lokal dengan membuat suatu *cabang* yang nantinya digunakan untuk menampung perubahan-perubahan tersebut. Setelah itu, cabang itu yang akan dikirim ke repo GitHub untuk dimintai review kemudian digabungkan (`merge`) ke main. Secara umum, repo yang dibuat biasanya sudah mempunyai satu branch yang disebut dengan `main`. Cara ini lebih aman, terstruktur, terkendali, dan mempunyai history yang lebih baik. Jika perubahan yang kita buat sudah terlalu kacau dan kita menyesal, maka ada cara untuk "membersihkan" repo lokal kita. Secara umum, langkahnya adalah sebagai berikut:
+
+1. Buat branch untuk menampung perubahan-perubahan
+2. Lakukan perubahan-perubahan
+3. Add dan commit perubahan-perubahan tersebut ke branch
+4. Kembali ke repo main
+5. Buat pull request di GitHub
+6. Merge pull request di GitHub
+7. Merge branch untuk menampung perubahan-perubahan tersebut ke main.
+8. Selesai.
+
+```bash
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
+$ git checkout -b edit-readme-1
+Switched to a new branch 'edit-readme-1'
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ code README.md
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ cat README.md
+
+# Repository Percobaan
+```
+perintah `$ git checkout -b edit-readme-1` digunakan untuk membuat branch baru yang bernama `edit-readme-1`.<br/>
+
+```bash
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ git status
+On branch edit-readme-1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ git add -A
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ git commit -m "Add: mengisi README.md"
+[edit-readme-1 981b3bc] Add: mengisi README.md
+ 1 file changed, 1 insertion(+)
+ ```
+Informasi diatas menjelaskan bahwa kita telah memodifikasi file `README.md` di dalam branch baru yang bernama `edit-readme-1` dan telah melakukan commit.
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (edit-readme-1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
+```bash
+$ git status
+On branch main
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
+$ git branch --unset-upstream
+
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+```
+`$ git branch --unset-upstream` digunakan untuk menghilangkan informasi upstream untuk nama branch apabila tidak ada branch yang ditentukan,dan defaultnya adalah branch saat ini.
+```bash
+Lenovo@LAPTOP-U32K1K3E MINGW64 /d/Kuliah/Semester 3/Metodologi Desain Perangkat Lunak Praktik IV/Github/repository-percobaan (main)
+$ git push origin edit-readme-1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 268 bytes | 268.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'edit-readme-1' on GitHub by visiting:
+remote:      https://github.com/fiqihr/repository-percobaan/pull/new/edit-readme-1
+remote:
+To https://github.com/fiqihr/repository-percobaan.git
+ * [new branch]      edit-readme-1 -> edit-readme-1
+```
