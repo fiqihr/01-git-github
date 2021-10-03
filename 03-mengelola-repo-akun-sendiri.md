@@ -549,3 +549,9 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/fiqihr/repository-percobaan.git
    cd60244..e929243  main -> main
 ```
+
+## Mengelola Repo Sendiri di Organisasi
+Pada dasarnya repo yang kita buat bisa diletakkan di akun kita maupun diletakkan di organisasi. Organisasi itu bisa berupa organisasi buatan kita sendiri ataupun organisasi dimana kita menjadi anggotanya. Untuk membuat repo yang dikelola organisasi,sebagian besar caranya sama seperti diatas. Hanya saja pada saat membuat repo, **Owner** dari repo kita adalah organisasi. <br/>
+![image](https://user-images.githubusercontent.com/75562356/135751837-f9ec12fd-fd46-4053-ab66-c839c2c95ab6.png)
+
+[Kembali ke README.md](README.md)
