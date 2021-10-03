@@ -38,3 +38,5 @@ Kemudian proses instalasi akan dimulai.<br />
 ![instal git 12](https://user-images.githubusercontent.com/75562356/135237939-609447b6-424e-4af4-84d0-8e39ec7a04b7.png)<br/>
 13. Kemudian tulis "git" di kolom pencarian windows. Lalu akan muncul Git Bash dan Git GUI. <br/>
 14. Tampilan pada saat membuka Git GUI. <br/>
+
+[**Kembali ke README.md**](README.md)
