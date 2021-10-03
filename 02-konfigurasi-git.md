@@ -24,3 +24,5 @@ Kemudian kita bisa membuka file `.gitconfig` pada Drive **C:\Users\nama-user** u
 	name = Fiqih Ref
 	email = fiqihref15@gmail.com
   ```
+
+[**Kembali ke README.md**](README.md)
